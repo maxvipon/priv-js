@@ -11,9 +11,6 @@
             "email": "maxvipon@gmail.com"
         }
     ],
-    "peerDependencies": {
-        "enb": "0.x"
-    },
     "devDependencies": {
         "mocha": "1.x",
         "chai": "1.x",
