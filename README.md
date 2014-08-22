@@ -1,4 +1,4 @@
-# PRIV
+# PRIV [![NPM version](https://badge.fury.io/js/priv-js.svg)](http://badge.fury.io/js/priv-js) [![Build Status](https://travis-ci.org/maxvipon/priv-js.svg)](https://travis-ci.org/maxvipon/priv-js) [![Coverage Status](https://coveralls.io/repos/maxvipon/priv-js/badge.png)](https://coveralls.io/r/maxvipon/priv-js)
 
 PRIV — это библиотека для функций БЭМ-блоков, которые динамически создают BEMJSON.
 
