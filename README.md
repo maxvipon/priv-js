@@ -1,28 +1,45 @@
-# PRIV [![NPM version](https://badge.fury.io/js/priv-js.svg)](http://badge.fury.io/js/priv-js) [![Build Status](https://travis-ci.org/maxvipon/priv-js.svg)](https://travis-ci.org/maxvipon/priv-js) [![Coverage Status](https://coveralls.io/repos/maxvipon/priv-js/badge.png)](https://coveralls.io/r/maxvipon/priv-js)
+# priv-js [![NPM version](https://badge.fury.io/js/priv-js.svg)](http://badge.fury.io/js/priv-js) [![Build Status](https://travis-ci.org/maxvipon/priv-js.svg)](https://travis-ci.org/maxvipon/priv-js) [![Coverage Status](https://coveralls.io/repos/maxvipon/priv-js/badge.png)](https://coveralls.io/r/maxvipon/priv-js)
 
-PRIV — это библиотека для функций БЭМ-блоков, которые динамически создают BEMJSON.
+Helper library, that contains functions and methods which will help you form final BEMJSON object in `*.priv.js` files.
 
-## Установка
+## Install
 
 ```
-npm install priv
+npm install priv-js
 ```
 
-## Использование
+## Usage
 
-priv-файлы в проекте имеют суффикс `priv.js`. Например, `button.priv.js`. Файл формируется в формате CommonJS для NodeJS:
+```js
+var Blocks = require('priv-js');
+var blocks = new Blocks;
+```
 
-```javascript
+All `*.priv.js` files exports function:
+
+```js
+// button.priv.js
 module.exports = function(blocks) {
     // ...
 };
 ```
 
-## Методы
+This function expects to get instance of `priv-js` object in first argument:
 
-### blocks.declare
+```js
+var privFile = require('button.priv.js');
+privFile(blocks);
+```
 
-Декларация блока по имени.
+## API
+
+### Blocks()
+
+Constructor. Returns `Blocks` instance, that have next methods:
+
+### blocks.declare(name, object)
+
+Declares object by name.
 
 ```javascript
 blocks.declare('header', function(data) {
@@ -38,9 +55,9 @@ blocks.declare('utils', {
 });
 ```
 
-### blocks.get
+### blocks.get(name)
 
-Возвращает priv-функцию блока по названию.
+Get declared object by name.
 
 ```javascript
 blocks.declare('price', function(data) {
@@ -52,9 +69,9 @@ blocks.declare('price', function(data) {
 });
 ```
 
-### blocks.exec
+### blocks.exec(name, args...)
 
-Выполняет priv-функцию блока, возвращает результат выполнения.
+Executes stored function with `args`. If type of stored object is not a function, exception will be thrown. Returns result of execution.
 
 ```javascript
 blocks.declare('item', function(data) {
@@ -66,15 +83,15 @@ blocks.declare('item', function(data) {
 });
 ```
 
-## История изменений
+## Changelog
 
-История изменений на [отдельной странице](/CHANGELOG).
+Changelog can be viewed on a [separate page](/CHANGELOG).
 
-## Разработка
+## Contribution
 
-Руководство на [отдельной странице](/CONTRIBUTION.md).
+Please, read [contribution guide](/CONTRIBUTING.md) before creating issues or submitting pull request.
 
-## Запуск тестов
+## Tests
 
 ```
 $ npm test
