@@ -23,7 +23,7 @@ describe('blocks.get', function() {
         (blocks.get.bind(blocks, true)).should.throw(TypeError);
         (blocks.get.bind(blocks, function() {})).should.throw(TypeError);
     });
-    it('should throw exception if method nod declared', function() {
+    it('should throw exception if method is not declared', function() {
         (blocks.get.bind(blocks, 'button')).should.throw(Error);
     });
 });

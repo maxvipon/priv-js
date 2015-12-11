@@ -54,6 +54,26 @@ blocks.declare('utils', {
     inverse: function(obj) { ... }
 });
 ```
+### blocks.has(name)
+
+Checks whether block is declared or not.
+
+```javascript
+blocks.declare('layout-vertical', function () {
+    return {
+        block: 'layout-vertical'
+    };
+});
+blocks.declare('layout', function () {
+    if (blocks.has('layout-vertical')) {
+        return blocks.exec('layout-vertical');
+    }
+
+    return {
+        block: 'layout'
+    };
+});
+```
 
 ### blocks.get(name)
 
