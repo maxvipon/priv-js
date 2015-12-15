@@ -103,14 +103,6 @@ blocks.declare('item', function(data) {
 });
 ```
 
-## Changelog
-
-Changelog can be viewed on a [separate page](/CHANGELOG).
-
-## Contribution
-
-Please, read [contribution guide](/CONTRIBUTING.md) before creating issues or submitting pull request.
-
 ## Tests
 
 ```
