@@ -50,7 +50,7 @@ blocks.declare('header', function(data) {
 });
 
 blocks.declare('utils', {
-    format: fucntion(number) { ... },
+    format: function(number) { ... },
     inverse: function(obj) { ... }
 });
 ```
